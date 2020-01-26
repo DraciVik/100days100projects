@@ -7,9 +7,9 @@ import {
 
 function SessionLength({ sessionLength, handleTimerChange }) {
   return (
-    <div className="session">
-      <div id="session-label">Session Length</div>
-      <div id="session-length">
+    <section className="session">
+      <h4 id="session-label">Session Length</h4>
+      <section id="session-length">
         <FontAwesomeIcon
           id="session-increment"
           onClick={handleTimerChange}
@@ -22,8 +22,8 @@ function SessionLength({ sessionLength, handleTimerChange }) {
           onClick={handleTimerChange}
           icon={faArrowCircleDown}
         />
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }
 

@@ -1,30 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
 body {
   background: linear-gradient(
     75deg,
-    rgba(195, 78, 248, 0.41) 0%,
-    rgba(239, 245, 99, 0.6) 100%
+    rgb(255, 129, 129) 0%,
+    rgba(253, 0, 0, 0.6) 100%
   );
+
+  font-family: "Orbitron", sans-serif;
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .app {
   margin: auto;
   font-size: 2rem;
 }
-h1 {
-  font-size: 2.5rem;
+p.footer-text {
+  text-align: center;
 }
 
 .pomodoro {
+  border-radius: 10px;
   display: grid;
   justify-content: center;
   align-items: center;
   grid-template-columns: inherit;
-  grid-template-rows: 100px 100px 100px 200px 50px;
+  grid-template-rows: 100px 100px 100px 150px 50px;
+  background-color: #ee4242;
+}
+header {
+  background-color: #992929;
+  place-self: stretch;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+h1 {
+  font-size: 2.5rem;
+  color: rgb(238, 226, 226);
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .break,
 .session,
 .timer {
   text-align: center;
+}
+.break,
+.session {
+  background-color: #992929;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+  color: rgb(238, 226, 226);
+}
+.session {
+  margin-top: 10px;
 }
 
 .controls {
@@ -52,7 +88,7 @@ h1 {
   }
 
   &:hover {
-    border-color: transparent transparent transparent #404040;
+    border-color: transparent transparent transparent #fa8585;
   }
 }
 
@@ -78,10 +114,73 @@ h1 {
   border-radius: 25px;
   width: 250px;
   margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.5);
   padding: 10px;
+  font-size: 2.3rem;
+  color: rgb(238, 226, 226);
+  font-weight: 900;
 }
 h4 {
   margin-top: 0;
   margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+}
+
+#reset:hover {
+  color: #fa8585;
+}
+
+#session-increment,
+#session-decrement,
+#break-increment,
+#break-decrement {
+  &:hover {
+    color: #837c7c;
+  }
+}
+
+// Footer
+
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.heart:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 5px;
+  top: 0;
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  opacity: 0.7;
 }

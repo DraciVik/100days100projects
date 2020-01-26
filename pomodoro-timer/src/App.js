@@ -3,6 +3,10 @@ import BreakInterval from "./components/BreakInterval";
 import SessionLength from "./components/SessionLength";
 import Timer from "./components/Timer";
 import "./App.scss";
+import Footer from "./components/Footer";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSyncAlt, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 class App extends React.Component {
   constructor() {
@@ -169,37 +173,44 @@ class App extends React.Component {
       timerSecond
     } = this.state;
     return (
-      <div className="app">
-        <div className="pomodoro">
-          <h1>Pomodoro Clock</h1>
-          <BreakInterval
-            breakLength={breakLength}
-            handleTimerChange={this.handleTimerChange}
-          />
-          <SessionLength
-            sessionLength={sessionLength}
-            handleTimerChange={this.handleTimerChange}
-          />
-          <Timer
-            isSession={isSession}
-            timerSecond={timerSecond}
-            timerMinute={timerMinute}
-            breakLength={breakLength}
-            updateTimerMinute={this.onUpdateTimerMinute}
-            toggleInterval={this.onToggleInterval}
-          />
-          <div className="controls">
-            <button
-              id="start_stop"
-              className="button"
-              onClick={this.handlePlayingState}
-            ></button>
-            <button id="reset" onClick={this.resetTimer}>
-              Reset
-            </button>
+      <>
+        <div className="app">
+          <div className="pomodoro">
+            <header>
+              <h1>Pomodoro Clock</h1>
+            </header>
+            <BreakInterval
+              breakLength={breakLength}
+              handleTimerChange={this.handleTimerChange}
+            />
+            <SessionLength
+              sessionLength={sessionLength}
+              handleTimerChange={this.handleTimerChange}
+            />
+            <Timer
+              isSession={isSession}
+              timerSecond={timerSecond}
+              timerMinute={timerMinute}
+              breakLength={breakLength}
+              updateTimerMinute={this.onUpdateTimerMinute}
+              toggleInterval={this.onToggleInterval}
+            />
+            <div className="controls">
+              <button
+                id="start_stop"
+                className="button"
+                onClick={this.handlePlayingState}
+              ></button>
+              <FontAwesomeIcon
+                id="reset"
+                onClick={this.resetTimer}
+                icon={faSyncAlt}
+              />
+            </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 }
