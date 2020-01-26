@@ -1,0 +1,87 @@
+body {
+  background: linear-gradient(
+    75deg,
+    rgba(195, 78, 248, 0.41) 0%,
+    rgba(239, 245, 99, 0.6) 100%
+  );
+}
+.app {
+  margin: auto;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+.pomodoro {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: inherit;
+  grid-template-rows: 100px 100px 100px 200px 50px;
+}
+
+.break,
+.session,
+.timer {
+  text-align: center;
+}
+
+.controls {
+  margin: auto;
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 37px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  // play state
+  border-style: solid;
+  border-width: 18.5px 0 18.5px 30px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 30px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
+}
+
+#break-increment,
+#break-decrement,
+#session-increment,
+#session-decrement {
+  font-size: 30px;
+}
+
+#break-increment,
+#session-increment {
+  padding-right: 10px;
+}
+
+#break-decrement,
+#session-decrement {
+  padding-left: 10px;
+}
+
+.timer {
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 250px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}

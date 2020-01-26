@@ -1,73 +1,202 @@
 import React from "react";
-import "./App.css";
+import BreakInterval from "./components/BreakInterval";
+import SessionLength from "./components/SessionLength";
+import Timer from "./components/Timer";
+import "./App.scss";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       breakLength: 5,
       sessionLength: 25,
-      playing: false
+      timerMinute: 25,
+      playing: false,
+      intervalId: 0,
+      isSession: true,
+      timerSecond: 0
     };
   }
 
-  handleTimerChange = e => {
-    const id = e.currentTarget.id;
+  handlePlayingState = () => {
+    const btn = document.querySelector(".button");
+    btn.classList.toggle("paused");
+    this.setState(prevState => ({
+      playing: !prevState.playing
+    }));
 
-    if (id === "break-increment") {
-      this.setState(prevState => ({
-        breakLength: prevState.breakLength + 1
-      }));
-    } else if (id === "break-decrement") {
-      this.setState(prevState => ({
-        breakLength: prevState.breakLength - 1
-      }));
-    } else if (id === "session-increment") {
-      this.setState(prevState => ({
-        sessionLength: prevState.sessionLength + 1
-      }));
-    } else if (id === "session-decrement") {
-      this.setState(prevState => ({
-        sessionLength: prevState.sessionLength - 1
-      }));
+    if (btn.classList.contains("paused")) {
+      let intervalId = setInterval(this.decreaseTimer, 1000);
+      this.setState({
+        intervalId: intervalId
+      });
+    } else {
+      this.stopTimer();
     }
   };
+
+  stopTimer = () => {
+    clearInterval(this.state.intervalId);
+  };
+
+  decreaseTimer = () => {
+    const { timerSecond, timerMinute, isSession } = this.state;
+    switch (timerSecond) {
+      case 0:
+        if (timerMinute === 0) {
+          if (isSession) {
+            this.setState({
+              isSession: false
+            });
+            this.onToggleInterval();
+          } else {
+            this.setState({
+              isSession: true
+            });
+            this.onToggleInterval();
+          }
+        }
+        this.onUpdateTimerMinute();
+        this.setState({
+          timerSecond: 59
+        });
+        break;
+      default:
+        this.setState(prevState => {
+          return {
+            timerSecond: prevState.timerSecond - 1
+          };
+        });
+        break;
+    }
+  };
+
+  resetTimer = () => {
+    this.setState({
+      breakLength: 5,
+      sessionLength: 25,
+      timerMinute: 25,
+      playing: false,
+      intervalId: 0,
+      isSession: true,
+      timerSecond: 0
+    });
+    const btn = document.querySelector(".button");
+    btn.classList.remove("paused");
+    this.stopTimer();
+  };
+
+  handleTimerChange = e => {
+    const id = e.currentTarget.id;
+    const { breakLength, sessionLength, isSession } = this.state;
+    if (!isSession) {
+      if (id === "break-increment") {
+        this.setState(prevState => ({
+          breakLength: prevState.breakLength + 1,
+          timerMinute: prevState.breakLength + 1
+        }));
+      } else if (id === "break-decrement") {
+        if (breakLength === 0) return;
+        this.setState(prevState => ({
+          breakLength: prevState.breakLength - 1,
+          timerMinute: prevState.breakLength - 1
+        }));
+      } else if (id === "session-increment") {
+        this.setState(prevState => ({
+          sessionLength: prevState.sessionLength + 1
+        }));
+      } else if (id === "session-decrement") {
+        if (sessionLength === 0) return;
+
+        this.setState(prevState => ({
+          sessionLength: prevState.sessionLength - 1
+        }));
+      }
+    }
+    if (isSession) {
+      if (id === "session-increment") {
+        this.setState(prevState => ({
+          sessionLength: prevState.sessionLength + 1,
+          timerMinute: prevState.sessionLength + 1
+        }));
+      } else if (id === "session-decrement") {
+        if (sessionLength === 0) return;
+
+        this.setState(prevState => ({
+          sessionLength: prevState.sessionLength - 1,
+          timerMinute: prevState.sessionLength - 1
+        }));
+      } else if (id === "break-increment") {
+        this.setState(prevState => ({
+          breakLength: prevState.breakLength + 1
+        }));
+      } else if (id === "break-decrement") {
+        if (breakLength === 0) return;
+        this.setState(prevState => ({
+          breakLength: prevState.breakLength - 1
+        }));
+      }
+    }
+  };
+
+  onUpdateTimerMinute = () => {
+    this.setState(prevState => {
+      return {
+        timerMinute: prevState.timerMinute - 1
+      };
+    });
+  };
+
+  onToggleInterval = () => {
+    const { isSession } = this.state;
+    if (isSession) {
+      this.setState({
+        timerMinute: this.state.sessionLength
+      });
+    } else {
+      this.setState({
+        timerMinute: this.state.breakLength
+      });
+    }
+  };
+
   render() {
+    let {
+      breakLength,
+      sessionLength,
+      timerMinute,
+      isSession,
+      timerSecond
+    } = this.state;
     return (
       <div className="app">
         <div className="pomodoro">
           <h1>Pomodoro Clock</h1>
-          <div className="break">
-            <div id="break-label">Break Length</div>
-            <div id="break-length">
-              <span id="break-increment" onClick={this.handleTimerChange}>
-                &uarr;
-              </span>
-              {this.state.breakLength}
-              <span id="break-decrement" onClick={this.handleTimerChange}>
-                &darr;
-              </span>
-            </div>
-          </div>
-          <div className="session">
-            <div id="session-length">Session Length</div>
-            <div id="session-length">
-              <span id="session-increment" onClick={this.handleTimerChange}>
-                &uarr;
-              </span>
-              {this.state.sessionLength}
-              <span id="session-decrement" onClick={this.handleTimerChange}>
-                &darr;
-              </span>
-            </div>
-          </div>
-          <div className="timer">
-            <div id="timer-label">Session</div>
-            <div id="time-left">{this.state.sessionLength}</div>
-          </div>
+          <BreakInterval
+            breakLength={breakLength}
+            handleTimerChange={this.handleTimerChange}
+          />
+          <SessionLength
+            sessionLength={sessionLength}
+            handleTimerChange={this.handleTimerChange}
+          />
+          <Timer
+            isSession={isSession}
+            timerSecond={timerSecond}
+            timerMinute={timerMinute}
+            breakLength={breakLength}
+            updateTimerMinute={this.onUpdateTimerMinute}
+            toggleInterval={this.onToggleInterval}
+          />
           <div className="controls">
-            <div id="start_stop"></div>
-            <div id="reset"></div>
+            <button
+              id="start_stop"
+              className="button"
+              onClick={this.handlePlayingState}
+            ></button>
+            <button id="reset" onClick={this.resetTimer}>
+              Reset
+            </button>
           </div>
         </div>
       </div>
