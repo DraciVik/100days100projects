@@ -2,8 +2,8 @@
 import React from "react";
 import { buzzwords, stringPermutations } from "./components/buzzwords";
 import "./App.scss";
-
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   constructor() {
@@ -216,6 +216,7 @@ class App extends React.Component {
             </button>
           </form>
         </main>
+        <Footer />
       </div>
     );
   }
