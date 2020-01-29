@@ -6,7 +6,7 @@ import "./App.scss";
 import Footer from "./components/Footer";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSyncAlt, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 class App extends React.Component {
   constructor() {
@@ -43,6 +43,12 @@ class App extends React.Component {
     clearInterval(this.state.intervalId);
   };
 
+  playSound = () => {
+    let beepSound = document.querySelector("#beep");
+    beepSound.currentTime = 0;
+    beepSound.play();
+  };
+
   decreaseTimer = () => {
     const { timerSecond, timerMinute, isSession } = this.state;
     switch (timerSecond) {
@@ -52,11 +58,13 @@ class App extends React.Component {
             this.setState({
               isSession: false
             });
+            this.playSound();
             this.onToggleInterval();
           } else {
             this.setState({
               isSession: true
             });
+            this.playSound();
             this.onToggleInterval();
           }
         }
@@ -88,6 +96,8 @@ class App extends React.Component {
     const btn = document.querySelector(".button");
     btn.classList.remove("paused");
     this.stopTimer();
+    let beepSound = document.querySelector("#beep");
+    beepSound.currentTime = 0;
   };
 
   handleTimerChange = e => {
@@ -217,6 +227,7 @@ class App extends React.Component {
           </div>
         </div>
         <Footer />
+        <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" />
       </>
     );
   }
