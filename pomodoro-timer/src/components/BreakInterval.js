@@ -8,15 +8,16 @@ import {
 function BreakInterval({ breakLength, handleTimerChange }) {
   return (
     <section className="break">
-      <h4 id="break-label">Break Length</h4>
-      <section id="break-length">
+      <section id="break-label">
+        <h4>Break Length</h4>
+
         <FontAwesomeIcon
           id="break-increment"
           onClick={handleTimerChange}
           icon={faArrowCircleUp}
         />
 
-        {breakLength}
+        <p id="break-length"> {breakLength}</p>
         <FontAwesomeIcon
           id="break-decrement"
           onClick={handleTimerChange}

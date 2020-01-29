@@ -95,6 +95,7 @@ class App extends React.Component {
     const { breakLength, sessionLength, isSession } = this.state;
     if (!isSession) {
       if (id === "break-increment") {
+        if (breakLength === 60) return;
         this.setState(prevState => ({
           breakLength: prevState.breakLength + 1,
           timerMinute: prevState.breakLength + 1
@@ -106,9 +107,11 @@ class App extends React.Component {
           timerMinute: prevState.breakLength - 1
         }));
       } else if (id === "session-increment") {
-        this.setState(prevState => ({
-          sessionLength: prevState.sessionLength + 1
-        }));
+        if (sessionLength === 60) {
+          this.setState(prevState => ({
+            sessionLength: prevState.sessionLength + 1
+          }));
+        }
       } else if (id === "session-decrement") {
         if (sessionLength === 0) return;
 
@@ -119,6 +122,8 @@ class App extends React.Component {
     }
     if (isSession) {
       if (id === "session-increment") {
+        if (sessionLength === 60) return;
+
         this.setState(prevState => ({
           sessionLength: prevState.sessionLength + 1,
           timerMinute: prevState.sessionLength + 1
@@ -131,6 +136,8 @@ class App extends React.Component {
           timerMinute: prevState.sessionLength - 1
         }));
       } else if (id === "break-increment") {
+        if (breakLength === 60) return;
+
         this.setState(prevState => ({
           breakLength: prevState.breakLength + 1
         }));
