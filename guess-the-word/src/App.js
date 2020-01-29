@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StartButton from "./components/StartButton";
 import AnagramValue from "./components/AnagramValue";
+import RangeSlider from "./components/RangeSlider";
 
 class App extends React.Component {
   constructor() {
@@ -168,22 +169,10 @@ class App extends React.Component {
               handleRearange={this.handleRearange}
               handleNewWord={this.handleNewWord}
             />
-
-            <section className="rangeSlider">
-              <label>Choose number of letters</label>
-              <section>
-                <input
-                  id="length"
-                  type="range"
-                  name="length"
-                  value={value}
-                  min="3"
-                  max="7"
-                  onChange={this.handleSliderChange}
-                ></input>
-                <span id="rangeValue">{value}</span>
-              </section>
-            </section>
+            <RangeSlider
+              handleSliderChange={this.handleSliderChange}
+              value={value}
+            />
           </section>
           <form id="userInput">
             <label className="inputLabel">Enter correct word:</label>
