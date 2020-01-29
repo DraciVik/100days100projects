@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import StartButton from "./components/StartButton";
 import AnagramValue from "./components/AnagramValue";
 import RangeSlider from "./components/RangeSlider";
+import Form from "./components/Form";
 
 class App extends React.Component {
   constructor() {
@@ -23,8 +24,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const { wordLength } = this.state;
     const singleBuzzwords = buzzwords.filter(
-      value => value.length == this.state.wordLength
+      value => value.length == wordLength
     );
     let length = singleBuzzwords.length;
     let randomNumber = Math.floor(Math.random() * length);
@@ -157,7 +159,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { value, currentAnagram } = this.state;
+    const { value, currentAnagram, userWord } = this.state;
     return (
       <div className="App">
         <Header />
@@ -174,20 +176,11 @@ class App extends React.Component {
               value={value}
             />
           </section>
-          <form id="userInput">
-            <label className="inputLabel">Enter correct word:</label>
-
-            <input
-              className="neutral"
-              type="text"
-              value={this.state.userWord}
-              onChange={this.handleUserInput}
-              placeholder="Enter the correct word"
-            ></input>
-            <button type="submit" value="Submit" onClick={this.handleSubmit}>
-              Submit
-            </button>
-          </form>
+          <Form
+            userWord={userWord}
+            handleUserInput={this.handleUserInput}
+            handleSubmit={this.handleSubmit}
+          />
         </main>
         <Footer />
       </div>
