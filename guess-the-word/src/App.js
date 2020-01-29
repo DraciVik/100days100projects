@@ -3,6 +3,8 @@ import React from "react";
 import { buzzwords, stringPermutations } from "./components/buzzwords";
 import "./App.scss";
 
+import Header from "./components/Header";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -155,9 +157,7 @@ class App extends React.Component {
     const { value, currentAnagram } = this.state;
     return (
       <div className="App">
-        <header>
-          <h1>Guess The Word!</h1>
-        </header>
+        <Header />
         <section id="startButton">
           <button type="submit" id="start" onClick={this.handleStart}>
             Click to start!
