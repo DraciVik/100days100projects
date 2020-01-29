@@ -4,6 +4,8 @@ import { buzzwords, stringPermutations } from "./components/buzzwords";
 import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import StartButton from "./components/StartButton";
+import AnagramValue from "./components/AnagramValue";
 
 class App extends React.Component {
   constructor() {
@@ -158,33 +160,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <section id="startButton">
-          <button type="submit" id="start" onClick={this.handleStart}>
-            Click to start!
-          </button>
-        </section>
+        <StartButton handleStart={this.handleStart} />
         <main>
           <section className="anagramSlider">
-            <div className="anagramValue">
-              <p>
-                Anagram:{" "}
-                <span id="anagram">
-                  {currentAnagram ? currentAnagram : "Lets play!"}
-                </span>
-              </p>
-              <div className="buttons">
-                <button
-                  onClick={this.handleRearange}
-                  type="button"
-                  value="rearange"
-                >
-                  Rearange
-                </button>
-                <button value="newWord" onClick={this.handleNewWord}>
-                  Get new word
-                </button>
-              </div>
-            </div>
+            <AnagramValue
+              currentAnagram={currentAnagram}
+              handleRearange={this.handleRearange}
+              handleNewWord={this.handleNewWord}
+            />
+
             <section className="rangeSlider">
               <label>Choose number of letters</label>
               <section>
