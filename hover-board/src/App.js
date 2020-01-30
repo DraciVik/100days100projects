@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   componentDidMount() {
@@ -7,19 +8,19 @@ class App extends React.Component {
     myDiv.forEach(div => {
       div.addEventListener("mouseover", this.addRandomBackground);
       div.addEventListener("mouseout", this.removeRandomBackground);
+      div.addEventListener("touchmove", this.addRandomBackground);
+      div.addEventListener("touchend", this.removeRandomBackground);
     });
   }
 
   removeRandomBackground = e => {
     let currentDiv = e.currentTarget;
-    // e.currentTarget.transition: "2s ease"
-    // currentDiv.style.transition = "2s ease";
+
     currentDiv.style.background = "#dec8fa";
-    // this.removeTransition(e);
   };
   removeTransition = e => {
     let currentDiv = e.currentTarget;
-    // e.currentTarget.transition: "2s ease"
+
     currentDiv.style.transition = "none";
   };
 
@@ -33,10 +34,6 @@ class App extends React.Component {
     currentDiv.style.background = backgroundValue;
   };
 
-  consoleThis = () => {
-    return console.log("hi");
-  };
-
   render() {
     let arrayOfDivs = new Array(480).fill(5);
     return (
@@ -46,6 +43,7 @@ class App extends React.Component {
             <div className="div" key={index}></div>
           ))}
         </main>
+        <Footer />
       </div>
     );
   }
