@@ -31,9 +31,9 @@ export default function DraggableDialog() {
   };
 
   return (
-    <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
+    <div id="modal">
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Open modal
       </Button>
       <Dialog
         open={open}
@@ -42,20 +42,20 @@ export default function DraggableDialog() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          Subscribe
+          Sell your soul?
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
+            Would you sell your soul and know all there is to know about
+            programming?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
-            Cancel
+            Yes
           </Button>
           <Button onClick={handleClose} color="primary">
-            Subscribe
+            Hell Yeah!
           </Button>
         </DialogActions>
       </Dialog>

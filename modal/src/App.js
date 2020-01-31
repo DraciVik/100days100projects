@@ -1,32 +1,51 @@
 import React from "react";
-import Modal from "./components/Modal";
 import "./App.css";
+import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 
 class App extends React.Component {
+  componentDidMount() {
+    const myDiv = document.querySelectorAll(".div");
+    myDiv.forEach(div => {
+      div.addEventListener("mouseover", this.addRandomBackground);
+      div.addEventListener("mouseout", this.removeRandomBackground);
+      div.addEventListener("touchmove", this.addRandomBackground);
+      div.addEventListener("touchend", this.removeRandomBackground);
+    });
+  }
+
+  removeRandomBackground = e => {
+    let currentDiv = e.currentTarget;
+
+    currentDiv.style.background = "#dec8fa";
+  };
+  removeTransition = e => {
+    let currentDiv = e.currentTarget;
+
+    currentDiv.style.transition = "none";
+  };
+
+  addRandomBackground = e => {
+    let randomRGBValue1 = Math.floor(Math.random() * 256);
+    let randomRGBValue2 = Math.floor(Math.random() * 256);
+    let randomRGBValue3 = Math.floor(Math.random() * 256);
+
+    let backgroundValue = `rgb(${randomRGBValue1}, ${randomRGBValue2}, ${randomRGBValue3})`;
+    let currentDiv = e.currentTarget;
+    currentDiv.style.background = backgroundValue;
+  };
+
   render() {
+    let arrayOfDivs = new Array(480).fill(5);
     return (
       <div className="App">
-        <Modal>
-          <div>
-            <h3>
-              This is a modal asking you to sell your soul to the devil just to
-              get rid of it
-            </h3>
-          </div>
-        </Modal>
-        <main>
-          <section>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <button onClick={this.toggleModal} id="toggle" type="button">
-              Toggle modal
-            </button>
-          </section>
+        <Modal />
+        <main id="container">
+          {arrayOfDivs.map((div, index) => (
+            <div className="div" key={index}></div>
+          ))}
         </main>
+        <Footer />
       </div>
     );
   }
