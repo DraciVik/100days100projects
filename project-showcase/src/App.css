@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bangers|Fjalla+One&display=swap");
 
-* {
-  font-family: "Bangers", cursive;
+body {
+  background: rgb(245, 146, 245);
 }
 
 header {
   text-align: center;
   font-size: 1.5rem;
+  font-family: "Bangers", cursive;
 }
 #container {
   display: grid;
@@ -25,7 +26,18 @@ header {
   /* justify-content: center; */
   padding: 2px 16px;
   border-radius: 10px;
-  align-items: center;
+}
+.card section {
+  text-align: center;
+
+  font-family: "Fjalla One", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: rgb(96, 126, 138);
+}
+a:visited {
+  color: rgb(96, 126, 138);
 }
 
 .card:hover {
@@ -37,6 +49,7 @@ header {
 img {
   margin-top: 5px;
   max-width: 100%;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 650px) {
@@ -51,4 +64,65 @@ img {
     grid-template-columns: 300px 300px 300px;
     grid-gap: 50px;
   }
+}
+/* Footer */
+
+p {
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+}
+.blue {
+  color: #00aced;
+}
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 10px;
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+  }
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.heart:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 5px;
+  top: 0;
+}
+
+.profile-link {
+  color: #ebf3fd;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  opacity: 0.7;
 }
