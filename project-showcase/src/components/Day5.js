@@ -1,7 +1,7 @@
 import React from "react";
 import HoverBoard from "./images/hover-board.png";
 
-export default function Day4() {
+export default function Day5() {
   return (
     <article class="card">
       <a href="https://hover-board.netlify.com/" target="_blank">

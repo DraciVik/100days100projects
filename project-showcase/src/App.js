@@ -5,12 +5,15 @@ import Day2 from "./components/Day2";
 import Day3 from "./components/Day3";
 import Day4 from "./components/Day4";
 import Day5 from "./components/Day5";
+import Day6 from "./components/Day6";
+import Day7 from "./components/Day7";
+
 import Footer from "./components/Footer";
 
 import "./App.css";
 
 function App() {
-  const myArr = new Array(94).fill(5);
+  const myArr = new Array(92).fill(5);
   return (
     <div className="App">
       <header className="shocaseHeader">
@@ -25,6 +28,8 @@ function App() {
         <Day3 />
         <Day4 />
         <Day5 />
+        <Day6 />
+        <Day7 />
         {myArr.map((value, index) => {
           return (
             <article key={index} class="card">
@@ -34,7 +39,7 @@ function App() {
                   alt="randomPhoto"
                 />
                 <section>
-                  <h4>Placeholder image - 00{index + 6}</h4>
+                  <h4>Placeholder image - 00{index + 8}</h4>
                 </section>
               </a>
             </article>
