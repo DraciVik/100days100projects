@@ -34,7 +34,7 @@ body {
 
 .main-links {
   width: 350px;
-  background-color: rgba(236, 59, 59, 0.8);
+  background-color: rgba(255, 0, 0, 0.9);
   text-align: center;
   height: 100vh;
   overflow-y: auto;
@@ -140,13 +140,28 @@ a:visited {
 }
 .contact-social-links {
   display: grid;
-  grid-template-columns: 200px 50px 200px;
+  grid-template-columns: 200px 200px;
   grid-template-rows: repeat(5, 50px);
   grid-template-areas:
-    "email emailIcon emailText" "linkedIn linkedInIcon linkedInText"
-    "gitHub gitHubIcon gitHubText" "twitter twitterIcon twitterText"
-    "instagram instagramIcon instagramText";
+    "email emailIcon"
+    "linkedIn linkedInIcon"
+    "gitHub gitHubIcon"
+    "twitter twitterIcon"
+    "instagram instagramIcon";
   font-size: 1.5rem;
+  align-items: center;
+  & a {
+    display: grid;
+    grid-template-columns: 30px 170px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    color: rgba(255, 0, 0, 0.9);
+
+    & :hover {
+      text-decoration: underline;
+    }
+  }
   & p {
     margin: 0;
   }
@@ -159,19 +174,12 @@ a:visited {
     grid-area: emailIcon;
   }
 
-  & .emailHandler {
-    grid-area: emailText;
-  }
   & .linkedInLabel {
     grid-area: linkedIn;
   }
 
   & .linkedIn {
     grid-area: linkedInIcon;
-  }
-
-  & .linkedInHandler {
-    grid-area: linkedInText;
   }
 
   & .githubLabel {
@@ -182,10 +190,6 @@ a:visited {
     grid-area: gitHubIcon;
   }
 
-  & .githubHandler {
-    grid-area: gitHubText;
-  }
-
   & .twitterLabel {
     grid-area: twitter;
   }
@@ -194,19 +198,11 @@ a:visited {
     grid-area: twitterIcon;
   }
 
-  & .twitterHandler {
-    grid-area: twitterText;
-  }
-
   & .instagramLabel {
     grid-area: instagram;
   }
 
   & .instagram {
     grid-area: instagramIcon;
-  }
-
-  & .instagramHandler {
-    grid-area: instagramText;
   }
 }

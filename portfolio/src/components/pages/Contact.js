@@ -1,7 +1,6 @@
 import React from "react";
-import Social from "../Social";
+import ContactSocial from "../ContactSocial";
 import SocialLabels from "../SocialLabels";
-import SocialHandlers from "../SocialHandlers";
 
 const Contact = () => {
   return (
@@ -12,9 +11,7 @@ const Contact = () => {
       </section>
       <section className="contact-social-links">
         <SocialLabels />
-        <Social />
-        {/* Make social handlers together with icons so on hover works the same as the example */}
-        <SocialHandlers />
+        <ContactSocial />
       </section>
     </section>
   );

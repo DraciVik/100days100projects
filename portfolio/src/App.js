@@ -2,6 +2,8 @@ import React from "react";
 import Viktor from "./components/images/viktor.png";
 import Contact from "./components/pages/Contact";
 import Social from "./components/Social";
+import Home from "./components/pages/Home";
+import { Router, Link } from "@reach/router";
 import "./App.scss";
 
 function App() {
@@ -23,11 +25,11 @@ function App() {
                 What I offer<span className="caret">&#10148;</span>
               </li>
             </a>
-            <a href="#">
+            <Link to="contact">
               <li>
                 Contact Me<span className="caret">&#10148;</span>
               </li>
-            </a>
+            </Link>
           </ul>
 
           <ul className="cvBlog">
@@ -52,7 +54,10 @@ function App() {
       </section>
 
       <main>
-        <Contact />
+        <Router>
+          <Home path="/" />
+          <Contact path="contact" />
+        </Router>
       </main>
     </div>
   );
