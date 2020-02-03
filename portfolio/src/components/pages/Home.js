@@ -1,10 +1,17 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const Home = () => {
   return (
-    <div id="home">
-      <h1>Hello motherfucker</h1>
-    </div>
+    <section id="home">
+      <section classList="intro">
+        <h1>Hi, I'm Viktor</h1>
+        <p>A Front End Web Developer </p>
+      </section>
+      <Link to="portfolio">
+        <button type="button">PORTFOLIO</button>
+      </Link>
+    </section>
   );
 };
 

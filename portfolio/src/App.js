@@ -3,28 +3,31 @@ import Viktor from "./components/images/viktor.png";
 import Contact from "./components/pages/Contact";
 import Social from "./components/Social";
 import Home from "./components/pages/Home";
+import Portfolio from "./components/pages/Portfolio";
 import { Router, Link } from "@reach/router";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <section className="main-links">
-        <img className="profilePicture" src={Viktor} alt="Owner" />
-        <h1 className="profile-name">Viktor Stojanov</h1>
-        <h3 className="profile-description">Front-End Web Developer</h3>
+      <aside className="main-links">
+        <Link to="/">
+          <img className="profilePicture" src={Viktor} alt="Owner" />
+          <h1 className="profile-name">Viktor Stojanov</h1>
+          <h3 className="profile-description">Front-End Web Developer</h3>
+        </Link>
         <section className="lists">
           <ul>
-            <a href="#">
+            <Link to="portfolio">
               <li>
                 Portfolio<span className="caret">&#10148;</span>
               </li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="offer">
               <li>
                 What I offer<span className="caret">&#10148;</span>
               </li>
-            </a>
+            </Link>
             <Link to="contact">
               <li>
                 Contact Me<span className="caret">&#10148;</span>
@@ -33,16 +36,16 @@ function App() {
           </ul>
 
           <ul className="cvBlog">
-            <a href="#">
+            <Link to="cv">
               <li>
                 My CV<span className="caret">&#10148;</span>
               </li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="blog">
               <li>
                 Personal Blog<span className="caret">&#10148;</span>
               </li>
-            </a>
+            </Link>
           </ul>
         </section>
         <section className="social">
@@ -51,12 +54,13 @@ function App() {
             <Social />
           </section>
         </section>
-      </section>
+      </aside>
 
       <main>
         <Router>
           <Home path="/" />
           <Contact path="contact" />
+          <Portfolio path="portfolio" />
         </Router>
       </main>
     </div>

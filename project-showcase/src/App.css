@@ -23,7 +23,6 @@ header {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   padding: 2px 16px;
   border-radius: 10px;
 }
