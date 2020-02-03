@@ -23,6 +23,7 @@ const Portfolio = () => {
               alt={project.alt}
               description={project.description}
               tags={project.tags}
+              url={project.url}
               key={index}
             />
           );

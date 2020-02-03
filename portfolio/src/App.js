@@ -6,7 +6,6 @@ import Home from "./components/pages/Home";
 import Portfolio from "./components/pages/Portfolio";
 import { Router, Link } from "@reach/router";
 import "./App.scss";
-
 function App() {
   return (
     <div className="App">
