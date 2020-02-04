@@ -14,6 +14,8 @@ const Portfolio = () => {
             styling and JavaScript logic.
           </strong>
         </p>
+        <br></br>
+        <hr />
       </section>
       <section className="projects">
         {projects.map((project, index) => {

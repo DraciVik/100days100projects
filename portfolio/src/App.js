@@ -4,6 +4,8 @@ import Contact from "./components/pages/Contact";
 import Social from "./components/Social";
 import Home from "./components/pages/Home";
 import Portfolio from "./components/pages/Portfolio";
+import NotFound from "./components/pages/NotFound";
+
 import { Router, Link } from "@reach/router";
 import "./App.scss";
 function App() {
@@ -22,30 +24,27 @@ function App() {
                 Portfolio<span className="caret">&#10148;</span>
               </li>
             </Link>
-            <Link to="offer">
-              <li>
-                What I offer<span className="caret">&#10148;</span>
-              </li>
-            </Link>
+
             <Link to="contact">
               <li>
                 Contact Me<span className="caret">&#10148;</span>
               </li>
             </Link>
-          </ul>
-
-          <ul className="cvBlog">
             <Link to="cv">
               <li>
                 My CV<span className="caret">&#10148;</span>
               </li>
             </Link>
-            <Link to="blog">
+            <a href="https://medium.com/@viktor.stojanov90">
               <li>
-                Personal Blog<span className="caret">&#10148;</span>
+                Personal Blog <span id="blogWork">(work in progress)</span>
+                <span className="caret">&#10148;</span>
               </li>
-            </Link>
+            </a>
           </ul>
+          {/* </ul>
+
+          <ul className="cvBlog"></ul> */}
         </section>
         <section className="social">
           <h4>Lets get in touch</h4>
@@ -60,6 +59,7 @@ function App() {
           <Home path="/" />
           <Contact path="contact" />
           <Portfolio path="portfolio" />
+          <NotFound default />
         </Router>
       </main>
     </div>
