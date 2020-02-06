@@ -43,7 +43,7 @@ const projects = [
     src: Pomodoro,
     alt: "Pomodoro clock App",
     description:
-      "A countdown counter based on the 'Pomodoro' technique with increment and decrement buttons, status display, play/pause/restart buttons and end-of-session signal",
+      "A countdown counter based on the 'Pomodoro' technique with increment and decrement buttons, status display, play/pause/restart buttons and an end-of-session signal",
     tags: ["Reactjs", "Flexbox", "CSS Grid", "HTML", "CSS"],
     url: "https://pomodoro-clock-balding-coder.netlify.com/"
   },

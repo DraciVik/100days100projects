@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 const Home = () => {
   return (
     <section id="home">
-      <section classList="intro">
+      <section className="intro">
         <h1>Hi, I'm Viktor</h1>
         <p>A Front End Web Developer </p>
       </section>

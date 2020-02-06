@@ -5,6 +5,7 @@ import Social from "./components/Social";
 import Home from "./components/pages/Home";
 import Portfolio from "./components/pages/Portfolio";
 import NotFound from "./components/pages/NotFound";
+import Cv from "./components/pages/Cv";
 
 import { Router, Link } from "@reach/router";
 import "./App.scss";
@@ -60,6 +61,7 @@ function App() {
           <Contact path="contact" />
           <Portfolio path="portfolio" />
           <NotFound default />
+          <Cv path="/cv" />
         </Router>
       </main>
     </div>
