@@ -15,7 +15,7 @@ const Cv = () => {
             <p>A web developer with a background in financial managament.</p>
             <p>
               Looking for opportunities to sharpen my Front-End skills as well
-              as evolving into a Full-Stack dev with the help of a mentorship.
+              as evolve into a Full-Stack dev with the help of a mentorship.
             </p>
           </section>
           <section className="cv-main-links">
@@ -25,7 +25,7 @@ const Cv = () => {
             >
               viktor.stojanov90@gmail.com
             </a>
-            <br></br>
+            <span className="hidden"> / </span>
             <a
               href="https://www.linkedin.com/in/stovik/"
               title="LinkedIin: StoVik"
@@ -33,7 +33,7 @@ const Cv = () => {
             >
               linkedin.com/in/stovik
             </a>
-            <br />
+            <span className="hidden"> / </span>
             <a
               href="https://www.github.com/dracivik"
               title="GitHub: DraciVik"
@@ -191,8 +191,8 @@ const Cv = () => {
             <section className="panevski-timeline">
               <h4 className="timeline">PANEVSKI &amp; SINOVI</h4>
               <p className="timeDate">
-                <time datetime="2016-12-01">Dec 2016</time> -{" "}
-                <time datetime="2019-05-01">May 2019</time>
+                <time dateTime="2016-12-01">Dec 2016</time> -{" "}
+                <time dateTime="2019-05-01">May 2019</time>
               </p>
               <p className="location">Location: Kumanovo, RM</p>
               <a href="http://panevski.com/" target="_blank">
@@ -243,8 +243,8 @@ const Cv = () => {
             <section className="daybor-timeline">
               <h4 className="timeline">Laboratorio Dental Daybor</h4>
               <p className="timeDate">
-                <time datetime="2015-12-01">Dec 2015</time> -{" "}
-                <time datetime="2016-09-01">Sep 2016</time>
+                <time dateTime="2015-12-01">Dec 2015</time> -{" "}
+                <time dateTime="2016-09-01">Sep 2016</time>
               </p>
               <p className="location">Location: Madrid, Spain</p>
             </section>
@@ -275,7 +275,7 @@ const Cv = () => {
               <p className="location">Location: NJ &amp; NH, USA</p>
             </section>
             <section className="usa-description">
-              <h3>Varriety of summer student jobs:</h3>
+              <h3>Variety of student summer jobs:</h3>
 
               <ul>
                 <li>
@@ -309,9 +309,25 @@ const Cv = () => {
             </section>
           </section>
         </section>
-        {/* here */}
         <section className="education">
           <h3>Education</h3>
+          <section className="eccf">
+            <section className="eccf-timeline">
+              <h4 className="timeline">"Ss. Cyril and Methodius University"</h4>
+              <p className="timeDate">2009-2013</p>
+              <a href="http://eccf.ukim.edu.mk/" target="blank">
+                eccf.ukim.edu.mk
+              </a>
+            </section>
+            <section className="eccf-description">
+              <h3>BSc in Financial Management</h3>
+
+              <ul>
+                <li>Active member of External Relations in AIESEC - Skopje</li>
+                <li>Active volunteer at Red Cross - Kumanovo</li>
+              </ul>
+            </section>
+          </section>
         </section>
       </section>
     </div>

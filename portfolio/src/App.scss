@@ -43,6 +43,8 @@ body {
 /* profile picture and links */
 
 .main-links {
+  // display: grid;
+  // grid-template-columns: minmax(300, auto) minmax(auto, auto);
   width: 400px;
   max-width: 100%;
   background-color: $base-color-opacity;
@@ -274,7 +276,6 @@ a:visited {
     padding-top: 50px;
     color: rgb(51, 51, 51);
   }
-  // padding-left: 50px;
   & h2 {
     margin-top: 0;
     font-size: 2.3rem;
@@ -454,6 +455,7 @@ a:visited {
   }
   & #cv {
     background-color: white;
+    box-shadow: 2px 2px 1px #606060;
     max-width: 760px;
     margin: 80px auto;
     display: grid;
@@ -472,7 +474,6 @@ a:visited {
       "skills"
       "cv-experience"
       "education";
-    grid-row-gap: 30px;
 
     & li {
       line-height: 1.5;
@@ -528,6 +529,8 @@ a:visited {
           margin-bottom: 5px;
           color: #777;
           font-size: 24px;
+
+          font-weight: 300;
         }
         & p {
           margin-top: 0;
@@ -544,6 +547,12 @@ a:visited {
         padding-left: 20px;
         grid-area: links;
         border-left: 1px solid #777;
+        & .hidden {
+          display: none;
+        }
+        & a {
+          display: block;
+        }
       }
     }
     & .skills {
@@ -638,6 +647,8 @@ a:visited {
         h3 {
           grid-area: description;
           margin-top: 0;
+          font-size: 18px;
+          font-weight: 400;
           color: black;
           margin-bottom: 0.8rem;
         }
@@ -667,6 +678,8 @@ a:visited {
       & .daybor-description {
         h3 {
           grid-area: description;
+          font-size: 18px;
+          font-weight: 400;
           margin-top: 0;
           color: black;
           margin-bottom: 0.8rem;
@@ -697,9 +710,293 @@ a:visited {
       & .usa-description {
         h3 {
           grid-area: description;
+          font-size: 18px;
+          font-weight: 400;
           margin-top: 0;
           color: black;
           margin-bottom: 0.8rem;
+        }
+      }
+    }
+
+    & .education {
+      display: grid;
+      grid-template-columns: 150px minmax(auto, auto);
+      grid-template-rows: 50px minmax(auto, auto);
+      grid-template-areas:
+        ". education"
+        "college college";
+      gap: 20px;
+
+      & h3 {
+        color: $base-color;
+        grid-area: education;
+        font-weight: 300;
+        font-size: 24px;
+      }
+      & .eccf {
+        grid-area: college;
+        display: grid;
+        grid-template-columns: 150px minmax(auto, auto);
+        grid-template-rows: minmax(auto, auto);
+        grid-template-areas: "timeline description";
+        grid-gap: 20px;
+
+        & .eccf-timeline {
+          grid-area: timeline;
+          & h4 {
+            margin-top: 0;
+          }
+          & a {
+            font-size: 13px;
+            display: block;
+            text-align: right;
+          }
+        }
+
+        & .eccf-description {
+          h3 {
+            grid-area: description;
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 0;
+            color: black;
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #cv-container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+
+    & #cv {
+      box-shadow: none;
+      padding: 20px;
+      margin: 0;
+      grid-template-columns: 100%;
+
+      grid-template-areas:
+        "mainInfo"
+        "skills"
+        "cv-experience"
+        "education";
+
+      & .mainInfo {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, minmax(auto, auto));
+        grid-template-areas:
+          "picture"
+          "description"
+          "main-links";
+        grid-gap: 0;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+
+        & img {
+          grid-area: picture;
+          margin: 0 auto;
+          border-radius: 5px;
+          margin-bottom: 15px;
+        }
+        & .description {
+          grid-area: description;
+          margin-top: 0;
+
+          & p {
+            font-size: 14px;
+            width: 70%;
+
+            margin: -5px auto 0 auto;
+
+            &:last-child {
+              margin: 0 auto;
+            }
+          }
+        }
+        & .cv-main-links {
+          grid-area: main-links;
+          border: none;
+
+          & .hidden {
+            display: inline;
+          }
+
+          & a {
+            margin-top: 10px;
+            font-size: 14px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 770px) {
+  #cv-container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+
+    & #cv {
+      box-shadow: none;
+      padding: 20px;
+      margin: 0;
+      grid-template-columns: 100%;
+
+      & .mainInfo {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, minmax(auto, auto));
+        grid-template-areas:
+          "picture"
+          "description"
+          "main-links";
+        grid-gap: 0;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+
+        & img {
+          grid-area: picture;
+          margin: 0 auto;
+          border-radius: 5px;
+          margin-bottom: 15px;
+        }
+        & .description {
+          grid-area: description;
+          margin-top: 0;
+
+          & p {
+            font-size: 14px;
+            width: 70%;
+
+            margin: -5px auto 0 auto;
+
+            &:last-child {
+              margin: 0 auto;
+            }
+          }
+        }
+        & .cv-main-links {
+          grid-area: main-links;
+          border: none;
+
+          & .hidden {
+            display: inline;
+          }
+
+          & a {
+            margin-top: 10px;
+            font-size: 14px;
+            display: inline-block;
+          }
+        }
+      }
+      & .timeline,
+      .timeDate,
+      .location {
+        background: none;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+      }
+
+      & .skills {
+        grid-template-columns: 100%;
+        grid-template-areas: "skills";
+
+        & .cv-skills {
+          grid-area: skills;
+        }
+      }
+
+      & .experience {
+        grid-gap: 0;
+        & .selfTaught {
+          grid-template-columns: 100%;
+          grid-template-areas:
+            "timeline"
+            "projects";
+
+          & .self-taught-timeline {
+            grid-area: timeline;
+          }
+
+          & .cv-projects-description {
+            grid-area: projects;
+          }
+        }
+
+        & .panevski,
+        .daybor,
+        .usa {
+          grid-template-columns: 100%;
+          grid-template-areas:
+            "timeline"
+            "description";
+          border-top: 1px solid #eee;
+
+          & .panevski-timeline,
+          .daybor-timeline,
+          .usa-timeline {
+            margin-top: 15px;
+            grid-area: timeline;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+
+            & .location {
+              justify-self: end;
+            }
+            & a {
+              display: none;
+            }
+          }
+        }
+      }
+
+      & .education {
+        grid-template-columns: 100%;
+        grid-template-areas:
+          "education"
+          "college";
+
+        & h3 {
+          grid-area: education;
+        }
+
+        & .eccf {
+          grid-area: college;
+          grid-template-columns: 100%;
+          grid-template-areas:
+            "timeline"
+            "description";
+          margin-bottom: 10px;
+
+          & .eccf-timeline {
+            margin-top: 15px;
+            grid-area: timeline;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: end;
+
+            & .location {
+              justify-self: end;
+            }
+            & a {
+              display: none;
+            }
+          }
+          & .eccf-description {
+            grid-area: description;
+          }
         }
       }
     }
