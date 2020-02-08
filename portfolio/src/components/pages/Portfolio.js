@@ -1,5 +1,5 @@
 import React from "react";
-import { projects } from "../projectsArray";
+import { projects } from "../arrays";
 import Project from "../Project";
 
 const Portfolio = () => {
