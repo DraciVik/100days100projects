@@ -247,6 +247,18 @@ p.footer-text {
   top: 0;
   transform: rotate(-45deg);
   width: 10px;
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+  }
 }
 
 .heart:before,
