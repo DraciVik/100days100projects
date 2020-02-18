@@ -15,11 +15,14 @@ class App extends React.Component {
       menuOpen: false
     };
   }
-  handleMenuClick = () => {
+  handleMenuClick = e => {
+    e.currentTarget.classList.toggle("change");
     this.setState({ menuOpen: !this.state.menuOpen });
   };
 
   handleLinkClick = () => {
+    let hamburger = document.querySelector(".hamburger");
+    hamburger.classList.toggle("change");
     this.setState({ menuOpen: false });
   };
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import Viktor from "./images/viktor.png";
+import Viktor from "./images/viktor.jpg";
 import { navLinks } from "./arrays";
 import Social from "./Social";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,11 +22,16 @@ class Menu extends React.Component {
           </section>
 
           <section className="lists">
-            <FontAwesomeIcon
+            <div className="hamburger" onClick={this.props.handleMenuClick}>
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
+            </div>
+            {/* <FontAwesomeIcon
               className="hamburger"
               icon={faBars}
               onClick={this.props.handleMenuClick}
-            ></FontAwesomeIcon>
+            ></FontAwesomeIcon> */}
             <ul
               style={{ visibility: "visible", transition: "height 0.3s ease" }}
               className="navigation-ul"
@@ -75,11 +80,16 @@ class Menu extends React.Component {
         </section>
 
         <section className="lists">
-          <FontAwesomeIcon
+          <div className="hamburger" onClick={this.props.handleMenuClick}>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+          </div>
+          {/* <FontAwesomeIcon
             className="hamburger"
             icon={faBars}
             onClick={this.props.handleMenuClick}
-          ></FontAwesomeIcon>
+          ></FontAwesomeIcon> */}
           <ul className="navigation-ul">
             {navLinks.map(link => {
               return (

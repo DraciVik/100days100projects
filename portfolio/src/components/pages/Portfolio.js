@@ -27,6 +27,7 @@ const Portfolio = () => {
               tags={project.tags}
               url={project.url}
               key={index}
+              github={project.github}
             />
           );
         })}

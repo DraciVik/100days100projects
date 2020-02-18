@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import CvImage from "../images/cv-viktor.jpg";
 
@@ -30,6 +29,7 @@ const Cv = () => {
               href="https://www.linkedin.com/in/stovik/"
               title="LinkedIin: StoVik"
               target="_blank"
+              rel="noreferrer noopener"
             >
               linkedin.com/in/stovik
             </a>
@@ -38,6 +38,7 @@ const Cv = () => {
               href="https://www.github.com/dracivik"
               title="GitHub: DraciVik"
               target="_blank"
+              rel="noreferrer noopener"
             >
               github.com/dracivik
             </a>
@@ -54,20 +55,36 @@ const Cv = () => {
               <li>Attentive to UI/UX details and high code quality.</li>
               <li>
                 Open source contributor: Contributed to{" "}
-                <a href="https://github.com/mozilla/" target="_blank">
+                <a
+                  href="https://github.com/mozilla/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   Mozilla
                 </a>
                 ,{" "}
-                <a href="https://github.com/gatsbyjs/" target="_blank">
+                <a
+                  href="https://github.com/gatsbyjs/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   Gatsbyjs
                 </a>{" "}
                 and
-                <a href="https://github.com/FrontendMasters" target="_blank">
+                <a
+                  href="https://github.com/FrontendMasters"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   {" "}
                   Frontend Masters
                 </a>{" "}
                 codebase and I actively upload my projects on{" "}
-                <a href="https://github.com/dracivik" target="_blank">
+                <a
+                  href="https://github.com/dracivik"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   GitHub
                 </a>
                 .
@@ -98,6 +115,7 @@ const Cv = () => {
                   <a
                     href="https://react-calculator-balding-coder.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Calculator App
                   </a>
@@ -107,6 +125,7 @@ const Cv = () => {
                   <a
                     href="https://guess-the-word-balding-coder.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Guess The Word game:
                   </a>{" "}
@@ -120,6 +139,7 @@ const Cv = () => {
                   <a
                     href="https://drum-machine-balding-coder.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Drum Machine App:
                   </a>{" "}
@@ -132,6 +152,7 @@ const Cv = () => {
                   <a
                     href="https://simpsons-quotes-balding-coder.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Simpsons quotes generator:{" "}
                   </a>
@@ -144,6 +165,7 @@ const Cv = () => {
                   <a
                     href="https://pomodoro-clock-balding-coder.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Pomodoro Clock App:{" "}
                   </a>
@@ -153,7 +175,11 @@ const Cv = () => {
                   and an end-of-session signal.
                 </li>
                 <li>
-                  <a href="https://hover-board.netlify.com/" target="_blank">
+                  <a
+                    href="https://hover-board.netlify.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     Hover Board App:
                   </a>{" "}
                   Made with React, HTML, CSS, CSS Grid and Flexbox. App responds
@@ -165,6 +191,7 @@ const Cv = () => {
                   <a
                     href="https://markdown-privewer.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     Markdown Previewer
                   </a>{" "}
@@ -176,6 +203,7 @@ const Cv = () => {
                   <a
                     href="https://100days100projects-showcase.netlify.com/"
                     target="_blank"
+                    rel="noreferrer noopener"
                   >
                     100Days100Projects showcase:
                   </a>{" "}
@@ -195,7 +223,11 @@ const Cv = () => {
                 <time dateTime="2019-05-01">May 2019</time>
               </p>
               <p className="location">Location: Kumanovo, RM</p>
-              <a href="http://panevski.com/" target="_blank">
+              <a
+                href="http://panevski.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 panevski.com
               </a>
             </section>
@@ -289,19 +321,31 @@ const Cv = () => {
                 </li>
                 <li>
                   Hotel maintenance at{" "}
-                  <a href="https://thegardensplaza.com/" target="_blank">
+                  <a
+                    href="https://thegardensplaza.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     The Gardens Plaza.
                   </a>
                 </li>
                 <li>
                   Server at{" "}
-                  <a href="https://weathervaneseafoods.com/" target="_blank">
+                  <a
+                    href="https://weathervaneseafoods.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     Weathervane seafood restaurant.
                   </a>
                 </li>
                 <li>
                   Sales associate at{" "}
-                  <a href="https://www.kohls.com" target="_blank">
+                  <a
+                    href="https://www.kohls.com"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     Kohl's.
                   </a>
                 </li>
