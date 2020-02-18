@@ -8,6 +8,7 @@ const Footer = () => {
         className="profile-link"
         href="https://github.com/DraciVik/100days100projects/tree/master/hover-board"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Viktor Stojanov{" "}
       </a>

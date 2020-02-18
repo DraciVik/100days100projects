@@ -8,6 +8,7 @@ const Footer = () => {
         className="profile-link"
         href="https://github.com/dracivik"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Viktor Stojanov{" "}
       </a>

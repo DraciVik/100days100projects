@@ -6,8 +6,9 @@ const Footer = () => {
       Made with <span className="heart"></span> by{" "}
       <a
         className="profile-link"
-        href="https://github.com/dracivik"
+        href="https://github.com/DraciVik/100days100projects/tree/master/project-showcase"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Viktor Stojanov{" "}
       </a>
